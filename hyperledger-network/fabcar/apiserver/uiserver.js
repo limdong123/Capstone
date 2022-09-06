@@ -11,10 +11,10 @@ const { Gateway,Wallets } = require('fabric-network');
 const path = require('path');
 const fs = require('fs');
 const http= require('http');
-const AWS =require('aws-sdk');
-const multerS3 =require('multer-s3');
-AWS.config.loadFromPath(__dirname+'/config/s3.json');
-const s3 =new AWS.S3();
+// const AWS =require('aws-sdk');
+// const multerS3 =require('multer-s3');
+// AWS.config.loadFromPath(__dirname+'/config/s3.json');
+// const s3 =new AWS.S3();
 
 const storage = multer.diskStorage({
     destination(req, file, callback) {
