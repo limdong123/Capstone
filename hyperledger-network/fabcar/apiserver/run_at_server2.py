@@ -75,7 +75,7 @@ def main():
     img = cvt_gray(img)
     img = img_fillter(img)
     cvt_img=cv2.resize(img, (90,90))
-    cv2.imwrite('./database/cvt_'+image_names, cvt_img)
+    #cv2.imwrite('./database/cvt_'+image_names, cvt_img)
     input_img1 = cv2.resize(img, (90,90)).reshape((1, 90, 90, 1)).astype(np.float32) / 255
 
     image_names2  = sys.argv[2] # 처리된 사진
@@ -88,7 +88,7 @@ def main():
     img2 = cvt_gray(img2)
     img2 = img_fillter(img2)
     cvt_img2=cv2.resize(img2, (90,90))
-    cv2.imwrite('./database/cvt_'+image_names2, cvt_img2)
+    #cv2.imwrite('./database/cvt_'+image_names2, cvt_img2)
     input_img2 = cv2.resize(img2, (90, 90)).reshape((1, 90, 90, 1)).astype(np.float32) / 255
 
     input_data = []

@@ -18,5 +18,5 @@ rm -rf apiserver/wallet/*
 rm -rf uiserver/wallet/*
 rm -rf java/wallet/*
 rm -rf typescript/wallet/*
-#rm -rf apiserver/images/*
-#rm -rf apiserver/database/*
+rm -rf apiserver/images/*
+rm -rf apiserver/database/*
