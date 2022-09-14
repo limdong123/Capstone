@@ -58,10 +58,6 @@ class FabInfo extends Contract {
         }
 
         const info = JSON.parse(infoAsBytes.toString());
-        // delete info.name;
-        // delete info.age;
-        // delete info.inf;
-        // delete info.docType;
         return JSON.stringify(info.finger);
         
     }
@@ -84,7 +80,7 @@ class FabInfo extends Contract {
     }
 
     async createInfo(ctx, infoNumber, name, finger, age, inf) {
-        console.info('============= START : Create Car ===========');
+        console.info('============= START : Create Info ===========');
 
         const infos= {
             name,
@@ -95,7 +91,7 @@ class FabInfo extends Contract {
         };
 
         await ctx.stub.putState(infoNumber, Buffer.from(JSON.stringify(infos)));
-        console.info('============= END : Create Car ===========');
+        console.info('============= END : Create Info ===========');
     }
 
     // async queryAllCars(ctx) {

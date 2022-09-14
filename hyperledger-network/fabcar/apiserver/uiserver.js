@@ -25,10 +25,10 @@ const upload = multer({ storage: storage });
 
 app.get('/api/query/:info_index', async function (req, res) {
     try {
-   
+        
         const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
         const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
-// Create a new file system based wallet for managing identities.
+        // Create a new file system based wallet for managing identities.
         const walletPath = path.join(process.cwd(), 'wallet');
         const wallet = await Wallets.newFileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
@@ -40,7 +40,7 @@ app.get('/api/query/:info_index', async function (req, res) {
             console.log('Run the registerUser.js application before retrying');
             return;
         }
-  // Create a new gateway for connecting to our peer node.
+        // Create a new gateway for connecting to our peer node.
         const gateway = new Gateway();
         await gateway.connect(ccp, { wallet, identity: 'appUser', discovery: { enabled: true, asLocalhost: true } });
         // Get the network (channel) our contract is deployed to.
@@ -58,7 +58,7 @@ app.get('/api/query/:info_index', async function (req, res) {
         process.exit(1);
     }
 });
-
+//Log in function
 app.post('/api/upload', upload.array('photo', 3),async function (req, res) {
     try {
         let start = new Date();
@@ -117,7 +117,7 @@ app.post('/api/upload', upload.array('photo', 3),async function (req, res) {
                 console.log("login USERID : ",req.body.UserID);
                 let finish = new Date();
                 console.log('state : Images Compare Finish');
-                console.log('state : Log in runtime',finish - start,'ms');
+                //console.log('state : Log in runtime',finish - start,'ms');
                 return;
             }else if(dataToSend.includes('no')){
                 console.log(`state : unmatched :: images between ${img1} & ${img2} are unmateched `);
@@ -139,7 +139,7 @@ app.post('/api/upload', upload.array('photo', 3),async function (req, res) {
         process.exit(1);
     }
 });
-
+//age check function 
 app.get('/api/queryauth/:info_index', async function (req, res) {
     try {
         let start = new Date();
@@ -185,7 +185,7 @@ app.get('/api/queryauth/:info_index', async function (req, res) {
     }
     
 });
-
+//sign up function
 app.post('/api/addinfo/', upload.array('photo', 3), async function (req, res) { 
     try {
         let start = new Date();
@@ -208,14 +208,8 @@ app.post('/api/addinfo/', upload.array('photo', 3), async function (req, res) {
       
         const gateway = new Gateway();
         await gateway.connect(ccp, { wallet, identity: 'appUser', discovery: { enabled: true, asLocalhost: true } });
-
-      
         const network = await gateway.getNetwork('mychannel');
-
-      
         const contract = network.getContract('fabinfo');
-      
-       
         console.log('state : upload INFO to singup')
     
         await contract.submitTransaction('createInfo', req.body.infoid, req.body.name, finger.image, req.body.age, req.body.inf);
