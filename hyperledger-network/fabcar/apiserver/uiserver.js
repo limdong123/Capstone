@@ -126,7 +126,7 @@ app.post('/api/upload', upload.array('photo', 3),async function (req, res) {
                 //clean(`./images/${data.UserId}_block.jpg`);
                 console.log('state : Images Compare Finish');
                 let finish = new Date();
-                console.log('state : Log in runtime',finish - start,'ms');
+                //console.log('state : Log in runtime',finish - start,'ms');
                 return;
             }      
         })
@@ -174,7 +174,7 @@ app.get('/api/queryauth/:info_index', async function (req, res) {
         console.log(JSON.parse(result.toString()));
         res.json(JSON.parse(result.toString()));
         let finish = new Date();
-        console.log('state : QuaryAuth runtime : ',finish - start,'ms');
+        //console.log('state : QuaryAuth runtime : ',finish - start,'ms');
        
 } catch (error) {
     
@@ -228,7 +228,7 @@ app.post('/api/addinfo/', upload.array('photo', 3), async function (req, res) {
         clean(`./images/${req.body.infoid}.jpg`);
         console.log('state : image delete')
         let finish = new Date();
-        console.log("state : Signup runtime : " , finish - start ,'ms');
+        //console.log("state : Signup runtime : " , finish - start ,'ms');
         gateway.disconnect();
 } catch (error) {
         console.error(`state : Failed to submit transaction: ${error}`);
