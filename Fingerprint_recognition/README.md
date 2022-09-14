@@ -8,15 +8,15 @@ This project recognizes fingerprints with two pictures taken from smartphone and
 The code train.ipynb is from https://github.com/kairess/fingerprint_recognition
 
 ## Data Preprocessing
-Step1. Cutting image based on the square area
+ - Step1. Cutting image based on the square area
 
-Step2. Increase brightness
+ - Step2. Increase brightness
 
-Step3. Convert image to gray
+ - Step3. Convert image to gray
 
-Step4. Convert image const
+ - Step4. Convert image const
 
-Step5. Extract fingerprint by using Gaussian fillter
+ - Step5. Extract fingerprint by using Gaussian fillter
 
 ## Dependencies
 - Python
