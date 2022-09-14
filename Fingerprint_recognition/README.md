@@ -2,7 +2,7 @@
 Using Fingerprint recognition using CNN  
 Data preprocessing(raw photo) for prediction
 
-This project recognizes fingerprints with two pictures taken from smartphone and to check whether they are matched.
+This project recognizes fingerprints with two pictures taken from smartphone and checks whether they are matched.
 
 ## TRAIN
 The code train.ipynb is from https://github.com/kairess/fingerprint_recognition
