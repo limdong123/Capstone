@@ -13,4 +13,3 @@
 4. Node - 12.22.10
 5. Docker - 20.10.12
 6. Docker Compose - 1.27.2
-7. React Native - 0.68.0
